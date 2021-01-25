@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TesteMQTT</string>
+    <string name="publish">Publish</string>
+    <string name="connect">connect</string>
+    <string name="disconnect">disconnect</string>
+    <string name="publicar">Publicar</string>
+    <string name="conectar">Conectar</string>
+    <string name="desconectar">Desconectar</string>
+    <string name="textview">TextView</string>
+    <string name="todo">TODO</string>
+</resources>
