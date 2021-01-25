@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">TesteMQTT</string>
     <string name="publish">Publish</string>
     <string name="connect">connect</string>
@@ -7,7 +7,7 @@
     <string name="conectar">Conectar</string>
     <string name="desconectar">Desconectar</string>
     <string name="textview">TextView</string>
-    <string name="todo">TODO</string>
+
     <string name="enter_message">Digite a Mensagem</string>
-    <string name="todo">TODO</string>
+
 </resources>
