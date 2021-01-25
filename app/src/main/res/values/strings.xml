@@ -8,4 +8,6 @@
     <string name="desconectar">Desconectar</string>
     <string name="textview">TextView</string>
     <string name="todo">TODO</string>
+    <string name="enter_message">Digite a Mensagem</string>
+    <string name="todo">TODO</string>
 </resources>

@@ -4,9 +4,13 @@ import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Vibrator;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +23,8 @@ import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
+
+import java.io.UnsupportedEncodingException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,12 +44,17 @@ public class MainActivity extends AppCompatActivity {
 
     Ringtone myRingtone;
 
+    private EditText textMessage;
+    private Button publishMessage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         subText=(TextView)findViewById(R.id.subText);
+        textMessage = (EditText) findViewById(R.id.textMessage);
+        publishMessage = (Button) findViewById(R.id.button);
 
         vibrator=(Vibrator) getSystemService(VIBRATOR_SERVICE);
 
@@ -101,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void pub(View v){
         String topic = topicStr2;
-        String message = "Hello World  From CowBoy";
+        String message = textMessage.getText().toString().trim();
         try {
             client.publish(topic, message.getBytes(),0,false);
         } catch (MqttException e) {
@@ -116,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
 
 
 }
